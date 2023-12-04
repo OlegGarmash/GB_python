@@ -16,8 +16,7 @@ numberX = 1
 for i in range(1, 1001):
     numberY = 1
     for j in range(1, 1001):
-        while numberX >= numberY:
-            if numberX + numberY == sumXY and numberY * numberX == multiXY:
-                print(f'{numberY} {numberX}', end=' ')
-            numberY += 1
+        if numberX <= numberY and numberX + numberY == sumXY and numberY * numberX == multiXY:
+            print(f'{numberX} {numberY}', end=' ')
+        numberY += 1
     numberX += 1
