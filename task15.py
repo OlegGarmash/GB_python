@@ -17,8 +17,8 @@ arbuz = int(input("Введите количество арбузов: "))
 MIN_WEIGHT = 1
 MAX_WEIGHT = 30
 
-# max_ = float('inf')
-# min_ = float('-inf')
+# max_ = float('Inf')
+# min_ = float('-Inf')
 
 arbuzmax, arbuzmin = MIN_WEIGHT, MAX_WEIGHT
 
