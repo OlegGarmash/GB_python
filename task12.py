@@ -12,8 +12,12 @@ sumXY = int(input("Введите сумму чисел X и Y: "))
 multiXY = int(input("Введите произведение чисел X и Y: "))
 
 numberX = 1
-numberY = 1
 
-while sumXY == numberX + numberY:
-    if
-
+for i in range(1, 1001):
+    numberY = 1
+    for j in range(1, 1001):
+        while numberX >= numberY:
+            if numberX + numberY == sumXY and numberY * numberX == multiXY:
+                print(f'{numberY} {numberX}', end=' ')
+            numberY += 1
+    numberX += 1
