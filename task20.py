@@ -51,3 +51,14 @@ for letter in word:
         result += 10
 
 print(f'Сумма букв равна: {result}')
+
+# scrabble = {1: 'AEIOULNSTRАВЕИНОРСТ', 2: 'DGДКЛМПУ', 3: 'BCMPБГЁЬЯ', 4: 'FHVWYЙЫ', 5: 'KЖЗХЦЧ', 8: 'JXШЭЮ', 10: 'QZФЩЪ'}
+# word = input('Введите слово: ')
+# word = word.upper()
+# score = 0
+# for letter in word:
+#     for points, letters in scrabble.items():
+#         if letter in letters:
+#             score += points
+#
+# print(score)
