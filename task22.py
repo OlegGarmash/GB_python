@@ -25,7 +25,8 @@ print(lst_2)
 print(set(lst_2))
 
 result = list(set(lst_1).intersection(set(lst_2)))
-
+# result.sort() # сортировка
+# print(result)
 for i in range(len(result)):
     for n in range(len(result) - 1):
         if result[i] < result[n]:
