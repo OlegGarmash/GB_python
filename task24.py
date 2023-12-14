@@ -34,3 +34,17 @@ for i in range(len(gardentrio)):
 print(gardenlst)
 print(gardentrio)
 print(result)
+
+# bushes = [random.randint(1,15) for _ in range(10)]
+#
+# print(bushes)
+#
+# max_berries = 0
+# for i in range(len(bushes)):
+#     total = bushes[i-2] + bushes[i-1] + bushes[i]
+#     if total > max_berries:
+#         max_berries = total
+#
+# print(max_berries)
+
+# total = bushes[i-2] + bushes[i-1] + bushes[i]
