@@ -6,15 +6,15 @@ Input:    2 -> 3 4
 Output: 4 3
 '''
 
-# def reverse_lst(n):
-#     if n == 0:
-#         return
-#     x = int(input())
-#     reverse_lst(n - 1)
-#     print(x, end=' ')
-#
-# num = int(input('Введите длину списка: '))
-# reverse_lst(num)
+def reverse_lst(n):
+    if n == 0:
+        return
+    x = int(input())
+    reverse_lst(n - 1)
+    print(x, end=' ')
+
+num = int(input('Введите длину списка: '))
+reverse_lst(num)
 
 def rec_input(num: int):
     if num == 0:
