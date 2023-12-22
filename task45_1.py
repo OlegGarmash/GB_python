@@ -20,7 +20,7 @@ def sumres(k):
 
 def sumres2(k):
     res = 0
-    for i in range(1, k)
+    for i in range(1, k):
         if
 
 print(sumres(k))
