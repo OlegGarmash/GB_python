@@ -10,15 +10,15 @@ print_operation_table(lambda x, y: x * y)
 
 def print_operation_table(operation, num_rows=9, num_columns=9):
     if num_rows > 1 and num_columns > 1:
-        for i in range(num_columns):
-            if i < num_columns - 1:
+        for i in range(num_rows):
+            if i < num_rows - 1:
                 print(i + 1, end=' ')
             else:
                 print(i + 1, end='\n')
-        for i in range(1, num_columns):
+        for i in range(1, num_rows):
             print(i + 1, end=' ')
-            for j in range(1, num_rows):
-                if j < num_rows - 1:
+            for j in range(1, num_columns):
+                if j < num_columns - 1:
                     print(operation(i + 1, j + 1), end=' ')
                 else:
                     print(operation(i + 1, j + 1), end='\n')
