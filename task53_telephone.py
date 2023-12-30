@@ -108,15 +108,20 @@ def copy_contact(contact_list):
                 key = int(key)
                 data[key] = value
             count = 0
+            if len(data) > 0:
+                len_data = list(data.keys())[len(data) - 1] + 1
+            else:
+                len_data = 1
             for k, v in data.items():
                 if contact_list[id_contact] == v:
                     count += 1
         if count != 0:
-            print(f'Контакт уже существует в файле {file_name}')
+            print(f'Контакт уже существует в файле {file_name}!')
         else:
+            print('Контакт успешно скопирован!')
             with open(file_name, 'a') as file:
                 file.write(
-                    f'{id_contact} {contact_list[id_contact][0]} {contact_list[id_contact][1]} {contact_list[id_contact][2]}\n')
+                    f'{len_data} {contact_list[id_contact][0]} {contact_list[id_contact][1]} {contact_list[id_contact][2]}\n')
 
 
 menu_main()
