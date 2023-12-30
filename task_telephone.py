@@ -1,92 +1,70 @@
-'''
-Создать телефонный справочник с возможностью импорта и экспорта данных в формате .txt.
-Фамилия, имя, отчество, номер телефона - данные, которые должны находиться в файле.
-1. Программа должна выводить данные
-2. Программа должна сохранять данные в текстовом файле
-3. Пользователь может ввести одну из характеристик для поиска определенной записи(Например имя или фамилию человека)
-4. Использование функций. Ваша программа не должна быть линейной
-'''
+with open('task53_main.txt') as file:
+    data = {}
+    for line in file:
+        key, *value = line.split()
+        data[key] = value
 
-# Открыть файл
-# сохранить файл
-# Создание контакта
-# Изм контакт
-# Найти контакт
-# Удалить контакт
-# показать контакт
-# выход
-def menu():
-    print("Выберете пункт меню:")
-    print("Нажмите 1 для получения контакта")
-    print("Нажмите 2 для удаления контакта")
-    print("Нажмите 3 для изменения контакта")
-    print("Нажмите 4 для добавления контакта")
-    print("Нажмите 5 для вывести список контактов")
-    print("Нажмите 6 для поиск")
-    print("Нажмите 9 для сохранить файл")
-    print("Нажмите 0 для завершения программы")
-    return int(input(a))
+print(data)
 
-# def open():
-#     data = open('file.txt', 'a')
-#     return 0
-#
-#
-# def save():
-#     return 0
-#
-#
-# def exit():
-#     return 0
-#
-#
-# def add():
-#     return 0
-#
-#
-# def change():
-#     return 0
-#
-#
-# def delete():
-#     return 0
-#
-#
-# def find():
-#     return 0
-#
-#
-# def show():
+with open('task53_homework.txt', 'w') as file:
+    for key, value in data.items():
+        file.write(f'{key} {value[0]} {value[1]} {value[2]}\n')
+
+
+# def close_file():
 #     return 0
 
 
-# contact = dict()
-# with open('input.txt', 'r+') as contacts:
-#     A = contacts.readline()
-#     while contact:
-#         contact[A[0]] = A[1:]
-
-print(menu())
-# menuid = (1, 2, 3, 4, 9, 0)
-# a = int(input())
-# while not (a in menu):
-#     print(menu())
-#     a = int(input())
+# fruit = {0: [1, 1], 1: [2, 2], 2: [3, 3]}
+# # print(len(fruit))
+# fruit[len(fruit)] = [4, 'qwe']
+# # print(len(fruit))
+# # print(fruit)
+# fruit[len(fruit)] = ['asd', 5]
+# # print(len(fruit))
+# # print(fruit)
+# fruit[len(fruit) + 1] = ['qwe', 'aSD']
+# # print(len(fruit))
+# # print(fruit)
+# data = fruit[1]
+# # print(data)
+# data[1] = 'asd'
+# fruit[1] = data
+# # print(len(fruit))
+# # print(fruit)
+# fruit[0][0] = 'Asd'
+# print(fruit)
+# fruit[len(fruit) + 2] = ['qwe', 'aSD']
+# fruit[len(fruit) + 2] = ['qwe', 'aSD']
 #
-# while a:
-#     if a == 1:
-#         open()
-#     elif a == 2:
-#         delete()
-#     elif a == 3:
-#         change()
-#     elif a == 4:
-#         add()
-#     elif a == 9:
-#         save()
-#     elif a == 5:
-#         show()
-#     elif a == 6:
-#         find()
-#     elif a == 0:
-#         exit()
+# # data = input('������� ������ ��� �����:\n')
+# # for key, value in fruit.items():
+# #     print(f'id {key}:', end='\t')
+# #     print(*list(fruit[key]), sep=', ')
+# temp = 3
+# del fruit[temp]
+# print(fruit)
+# # for key in fruit:
+# #     if key > temp:
+# #         fruit[key] = fruit[key-1]
+# #
+# # print(fruit)
+#
+# lst = list(fruit.keys())
+# print(lst)
+# tmp = list()
+# for i in range(len(lst)):
+#     if (lst[i] - lst[i - 1]) > 1:
+#         tmp.append(lst[i] - 1)
+#
+# print(tmp)
+# # print(temp)
+#
+# print(list(fruit.keys())[len(fruit) - 1] + 1)
+# print(list(fruit.keys())[len(fruit) - 1] + 1)
+#
+# # f = open('text.txt', 'r')
+# # for line in f:
+# #     print(line)
+# # f.writelines(str(fruit))
+# # f.close()
