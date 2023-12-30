@@ -145,4 +145,3 @@ while a != 0:
         copy_contact(main_data)
     menu_main()
     a = int(input('-> '))
-print(main_data)
