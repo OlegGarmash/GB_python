@@ -23,7 +23,7 @@ def open_file(file_name):
     with open(file_name) as file:
         data = {}
         for line in file:
-            key, *value = line.split()
+            key, *value = line.split(', ')
             key = int(key)
             data[key] = value
     return data
@@ -32,7 +32,7 @@ def open_file(file_name):
 def save_file(data, file_name):
     with open(file_name, 'w') as file:
         for key, value in data.items():
-            file.write(f'{key} {value[0]} {value[1]} {value[2]}\n')
+            file.write(f'{key}, {value[0]}, {value[1]}, {value[2]}')
 
 
 def create_contact(contact_list):
@@ -65,10 +65,11 @@ def find_contact(contact_list):
     for key, value in contact_list.items():
         if find_data.lower() in str(value).lower():
             print(f'id {key}:', end='\t')
-            print(*list(value), sep=', ')
+            print(*list(value), sep=', ', end='')
             count += 1
     if count == 0:
         print('Контакт не найден!')
+    print()
 
 
 def delete_contact(contact_list):
@@ -83,7 +84,8 @@ def delete_contact(contact_list):
 def show_contact(contact_list):
     for key, value in contact_list.items():
         print(f'id {key}:', end='\t')
-        print(*list(value), sep=', ')
+        print(*list(value), sep=', ', end='')
+    print()
 
 
 def copy_contact(contact_list):
@@ -91,29 +93,24 @@ def copy_contact(contact_list):
     if id_contact not in contact_list:
         print(f'Контакт с id {id_contact} не найден!')
     else:
-        #file_name = input('\nВведите имя файла для сохранения контакта: ')
+        # file_name = input('\nВведите имя файла для сохранения контакта: ')
         file_name = 'task53.txt'
-        with open(file_name) as file:
-            data = {}
-            for line in file:
-                key, *value = line.split()
-                key = int(key)
-                data[key] = value
-            count = 0
-            if len(data) > 0:
-                len_data = list(data.keys())[len(data) - 1] + 1
-            else:
-                len_data = 1
-            for k, v in data.items():
-                if contact_list[id_contact] == v:
-                    count += 1
+        data = open_file(file_name)
+        if len(data) > 0:
+            len_data = list(data.keys())[len(data) - 1] + 1
+        else:
+            len_data = 1
+        count = 0
+        for k, v in data.items():
+            if contact_list[id_contact] == v:
+                count += 1
         if count != 0:
             print(f'Контакт уже существует в файле {file_name}!')
         else:
             print('Контакт успешно скопирован!')
             with open(file_name, 'a') as file:
                 file.write(
-                    f'{len_data} {contact_list[id_contact][0]} {contact_list[id_contact][1]} {contact_list[id_contact][2]}\n')
+                    f'{len_data}, {contact_list[id_contact][0]}, {contact_list[id_contact][1]}, {contact_list[id_contact][2]}')
 
 
 menu_main()
