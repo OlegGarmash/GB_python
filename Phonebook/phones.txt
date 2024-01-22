@@ -1,0 +1,6 @@
+Ivanov;88009000055;work
+Petrov;88009005555;home
+Sidorov;88009955336;mobile
+Kuznetsov;88009995566;work
+Gogol;88009955663;home
+Vasechkin Ivan;8990005689;mobile
