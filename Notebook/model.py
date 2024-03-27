@@ -1,6 +1,5 @@
 import datetime
 import json
-import random
 
 
 class NoteModel:
@@ -19,9 +18,10 @@ class NoteModel:
             json.dump(self.notes, file, indent=4)
 
     def add_note(self, title, body):
-        note_id = random.randint(1, 100000)
-        while any(note['id'] == note_id for note in self.notes):
-            note_id = random.randint(1, 100000)
+        if len(self.notes) > 0:
+            note_id = self.notes[-1]['id'] + 1
+        else:
+            note_id = 1
 
         new_note = {
             'id': note_id,
