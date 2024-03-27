@@ -22,7 +22,6 @@ class NoteModel:
         note_id = random.randint(1, 100000)
         while any(note['id'] == note_id for note in self.notes):
             note_id = random.randint(1, 100000)
-        # note_id = int(self.notes.__getitem__('id')[-1])+1
 
         new_note = {
             'id': note_id,
